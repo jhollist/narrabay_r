@@ -20,6 +20,11 @@ If you follow these directions you should have a working install of R.  They do 
   - [Mac OS X 10.6+ 64-bit](https://download1.rstudio.org/RStudio-1.1.423.dmg)
 - Using the installer, install RStudio how you normally would install any application on your computer.
 
+# Data
+
+I have grabed some buoy data from the Narragansett Bay Commission's Snapshot of the bay.  Instead of having us all work through the download (with R!) I saved it as a `.csv`.  Go ahead and download the file prior to the workshop.  
+
+- [download the `narrabay_buoy_1517.csv` file](https://raw.githubusercontent.com/jhollist/narrabay_r/master/narrabay_buoy_1517.csv)
 
 # Agenda (subject to change!)
 
