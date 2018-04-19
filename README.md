@@ -33,7 +33,7 @@ I have grabed some buoy data from the Narragansett Bay Commission's Snapshot of 
 |9:15 AM - 9:30 AM  |Introductions| 
 |9:30 AM - 10:00 AM |[RStudio](lessons/01_rstudio.md)|
 |10:00 AM - 11:00 AM|[R Basics](lessons/02_r_basics.md)|
-|11:00 AM - Noon    |[Tidy Data and Data Managment in R](lessons/04_tidy_data_in_r.md)|
+|11:00 AM - Noon    |[Tidy Data and Data Frames in R](lessons/03_tidy_data_in_r.md)|
 |Noon - 1:00 PM     |LUNCH|
 |1:00 PM - 3:00 PM  |[Data Visualization with `ggplot2`](lessons/05_data_viz_with_ggplot2.md)|
 

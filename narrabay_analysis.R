@@ -42,49 +42,31 @@ library(here)
 #narrabay_data<-read_csv(url) 
 
 # Read in Data
-narrabay_data <- read_csv("narrabay_buoy_1517.csv") %>%
-  rename_all(tolower)
+narrabay_data <- read_csv("narrabay_buoy_1517.csv") 
 
 # Some basic QA
-range(narrabay_data$chl, na.rm = TRUE)
-range(narrabay_data$ph, na.rm = TRUE)
-range(narrabay_data$temp, na.rm = TRUE)
-
-## Problem #1 - -7999 looks a bit like a missing data value - should use NA
-### Get some more info on these values
-View(narrabay_data)
-
+## Problem #1 - -7999 looks a bit like a missing data value - should prob use NA
 narrabay_data_qa1 <- narrabay_data %>%
-  mutate(chl = case_when(chl == -7999 ~ NA_real_,
-                              TRUE ~ chl),
-         ph = case_when(ph == -7999 ~ NA_real_,
-                             TRUE ~ ph),
-         temp = case_when(temp == -7999 ~ NA_real_,
-                               TRUE ~ temp))
-
-### Check range again
-range(narrabay_data_qa1$chl, na.rm = TRUE)
-range(narrabay_data_qa1$ph, na.rm = TRUE)
-range(narrabay_data_qa1$temp, na.rm = TRUE)
+  mutate(Chl = case_when(Chl == -7999 ~ NA_real_,
+                              TRUE ~ Chl),
+         pH = case_when(pH == -7999 ~ NA_real_,
+                             TRUE ~ pH),
+         Temp = case_when(Temp == -7999 ~ NA_real_,
+                               TRUE ~ Temp))
 
 ## Problem #2 EXTREMES!!!! 
 ### Negative chl?
 ### Negative pH?
 ### HOT water
 narrabay_data_qa2 <- narrabay_data_qa1 %>%
-  filter(chl >= 0) %>%
-  filter(ph >= 0 & ph <= 14) %>%
-  filter(temp < 40)
-
-### Check ranges again
-range(narrabay_data_qa2$chl, na.rm = TRUE)
-range(narrabay_data_qa2$ph, na.rm = TRUE)
-range(narrabay_data_qa2$temp, na.rm = TRUE)
-  
+  filter(Chl >= 0) %>%
+  filter(pH >= 0 & pH <= 14) %>%
+  filter(Temp < 40)
 
 ## Problem #1 - multiple variables in one column
 ## Problem #2 - date encoding
 narrabay_tidy <- narrabay_data_qa2 %>%
+  rename_all(tolower) %>%
   mutate(layer = str_extract(.$location, "\\(\\w+\\)"),
          location = str_extract(.$location, "\\w+")) %>%
   mutate(layer = str_extract(.$layer, "\\w+")) %>%
@@ -101,7 +83,6 @@ narrabay_analysis <- narrabay_tidy %>%
             daily_temp = mean(temp))
 
 # Visualize Data
-
 time_series_gg <- narrabay_analysis %>%
   gather(parameter, measurement, daily_chl:daily_temp) %>%
   ggplot(aes(x = date, y = measurement)) +
