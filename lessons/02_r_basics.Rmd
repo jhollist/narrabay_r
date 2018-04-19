@@ -15,7 +15,7 @@ library("dplyr")
 
 # R Basics
 
-In this lesson we are going to go over the very basics of R, cover some basic terminology, talk a little about syntax and point you to resources for getting help.
+In this lesson we are going to go over the very basics of R, cover some basic terminology, talk a little about syntax and point you to resources for getting help.  
 
 ## Lesson Outline:
 
@@ -188,6 +188,8 @@ help(package="dplyr") #Help on the package `dplyr`
 apropos("print") #Returns all available functions with "print" in the name
 ??print #Shortcut, but also searches demos and vignettes in a formatted page
 ```
+
+A newer resource that I found to be quite well done is this [Appendix](http://socviz.co/appendix.html#how-to-read-an-r-help-page) from a new book by Kieran Healy on Data Visualization.  It gives you a basic outline of what the standard R Help pages look like and how to interpret them.  Highly recommend this!
 
 ### Official R Resources
 In addition to help from within R itself, CRAN and the R-Project have many resources available for support.  Two of the most notable are the mailing lists and the [task views](http://cran.r-project.org/web/views/).

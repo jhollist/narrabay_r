@@ -45,20 +45,20 @@ Projects are a way to organize your work in RStudio.  Essentially they are folde
 
 ### Source, Scripts, and R Markdown
 
-The source you work on will usually be in scripts (i.e., text files that hold the code you write), or in our case R Markdown files (`.Rmd`) that hold code, documentation, etc.  We will work with our `.Rmd` files and the console during this workshop.  To create a new R Markdown File you use "File:New File:R Markdown".
+The source you work on will usually be in scripts (i.e., text files that hold the code you write) or R Markdown files (`.Rmd`) that hold code, documentation, etc.  We will work with an `.R` script and the console during this workshop.  To create a new R Script you use "File:New File:R Script".
 
-![rstudio script](figures/rstudio_rmark.jpg)
+![rstudio script](figures/rstudio_script.jpg)
 
 
 ### Interacting with R inside of RStudio
 
-Once you have text and code in your R Markdown file, they still need to be sent to the R console or rendered.  There are several ways to do this.  There is the old stand-by of copying and pasting, but this is a bit cumbersome.  Instead you can use the `Run` menu in the upper right corner of the source pane, or even better (I think so, anyway) you can use `ctrl-enter`.  Both the `Run` buttons and `ctrl-enter` will send the line that your cursor is on and move to the next line or it will send just the selected text. When working with R Markdown files we usually want to render those to an output format such as html or pdf.  Again, there are several ways to do that.  The easiest is it use the knit button near the upper left of your source pane.
+Once you have text and code in your R script, the code still needs to be sent to the R console so that it can be run.  There are several ways to do this.  There is the old stand-by of copying and pasting, but this is a bit cumbersome.  Instead you can use the `Run` menu in the upper right corner of the source pane, or even better (I think so, anyway) you can use `ctrl-enter`.  Both the `Run` buttons and `ctrl-enter` will send the line that your cursor is on and move to the next line or it will send just the selected text. 
 
-![rstudio-script](figures/rstudio_knit.jpg)
+![rstudio-script](figures/rstudio_run.jpg)
 
 ## Exercise 1.1
 
-Now that we have RStudio opened and know are way around a bit, we are going to jump straight to the end and see what an R Markdown file looks like, render it and be amazed!  This is kind of like telling a joke by starting with the punch line first!
+Now that we have RStudio opened and know are way around a bit, we are going to jump straight to the end and see what a finished (sorta) R script looks like.  We will run the whol thing and be amazed!  In this case we are starting with the punchline first!
 
-1. Follow the link to [The Punch Line](punchline.md) and we will work through that together to get more familar with R Studio, R Markdown, and GitHub (sort of). 
+1. Follow this link to [the Punch Line](punchline.md) and we will work through that together to get more familar with R, R Studio, R script.
 
