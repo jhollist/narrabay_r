@@ -73,17 +73,14 @@ narrabay_tidy <- narrabay_data_qa2 %>%
   mutate(date_time = mdy_hms(time)) %>%
   mutate(date = date(date_time)) 
 
-# Aggregate to daily and surface
-narrabay_analysis <- narrabay_tidy %>%
+# Visualize Data
+time_series_gg <-  narrabay_tidy %>%
   filter(layer == "surface") %>%
   # Aggrgate to daily per location and per parameter
   group_by(date, location) %>%
   summarize(daily_chl = mean(chl),
             daily_ph = mean(ph),
-            daily_temp = mean(temp))
-
-# Visualize Data
-time_series_gg <- narrabay_analysis %>%
+            daily_temp = mean(temp)) %>%
   gather(parameter, measurement, daily_chl:daily_temp) %>%
   ggplot(aes(x = date, y = measurement)) +
   facet_grid(parameter~., scales = "free_y") +         
@@ -91,7 +88,13 @@ time_series_gg <- narrabay_analysis %>%
   theme_bw()
 time_series_gg  
 
-chla_temp_gg <- narrabay_analysis %>%
+chla_temp_gg <- narrabay_tidy %>%
+  filter(layer == "surface") %>%
+  # Aggrgate to daily per location and per parameter
+  group_by(date, location) %>%
+  summarize(daily_chl = mean(chl),
+            daily_ph = mean(ph),
+            daily_temp = mean(temp)) %>%
   ggplot(aes(x = daily_temp, y = daily_chl)) +
   geom_point(aes(color = location, group = date)) +
   geom_smooth(method = "lm", color = "black") +
