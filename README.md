@@ -35,5 +35,5 @@ I have grabed some buoy data from the Narragansett Bay Commission's Snapshot of 
 |10:00 AM - 11:00 AM|[R Basics](lessons/02_r_basics.md)|
 |11:00 AM - Noon    |[Tidy Data and Data Frames in R](lessons/03_tidy_data_in_r.md)|
 |Noon - 1:00 PM     |LUNCH|
-|1:00 PM - 3:00 PM  |[Data Visualization with `ggplot2`](lessons/05_data_viz_with_ggplot2.md)|
+|1:00 PM - 3:00 PM  |[Data Visualization with `ggplot2`](lessons/04_data_viz_with_ggplot2.md)|
 
