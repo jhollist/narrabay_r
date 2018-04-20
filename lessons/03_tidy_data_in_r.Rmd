@@ -32,6 +32,7 @@ In this lesson we will cover the basics of data in R and will do so from a somew
 ## Exercises
 - [Excercise 3.1](#exercise-31)
 - [Excercise 3.2](#exercise-32)
+- [Excercise 3.3](#exercise-33)
 
 ## Data in R: The data frame
 
@@ -45,14 +46,13 @@ The best way to learn what a data frame is is to look at one.  We can build one 
 
 The `read_csv()` is a re-imagined version of the base R fucntion, `read.csv()`.  This command assumes a header row with column names and that the delimiter is a comma. The expected no data value is NA and by default, strings are NOT converted to factors.  This is a big benefit to using `read_csv()` as opposed to `read.csv()`.  Additionally, `read_csv()` has some performance enhancements that make it preferrable when working with larger data sets.  In my limited experience it is about 45% faster than the base R options.  For instance a ~200 MB file with hundreds of columns and a couple hundred thousand rows took ~14 seconds to read in with `read_csv()` and about 24 seconds with `read.csv()`.  As a comparison at 45 seconds Excel had only opened 25% of the file!
 
-Source files for `read_csv()` can either be on a local hard drive or, and this is pretty cool, on the web. We will be using the former for our examples and exercises. If you had a file available from a URL it would be accessed like `mydf <- read.csv("https://example.com/my_cool_file.csv")`. This is what is shown in our the `narrabay_analysis.R` script on lines 31-42, albeit with some additional magic.  As an aside, paths and the use of forward vs back slash is important. R is looking for forward slashes ("/"), or unix-like paths. You can use these in place of the back slash and be fine. You can use a back slash but it needs to be a double back slash ("\"). This is becuase the single backslash in an escape character that is used to indicate things like newlines or tabs. 
+Source files for `read_csv()` can either be on a local hard drive or, and this is pretty cool, on the web. We will be using the former for our examples and exercises. If you had a file available from a URL it would be accessed like `mydf <- read.csv("https://example.com/my_cool_file.csv")`. This is what is shown in our the `narrabay_analysis.R` script on lines 31-42, albeit with some additional magic.  As an aside, paths and the use of forward vs back slash is important. R is looking for forward slashes ("/"), or unix-like paths. You can use these in place of the back slash and be fine. You can use a back slash but it needs to be a double back slash ("\\\\"). This is becuase the single backslash in an escape character that is used to indicate things like newlines or tabs. 
 
 For today's workshop we will focus on grabbing data from a local file, and we already have an example of this in our `narrabay_analysis.R`.  In that file look for the (uncommented) code labeled "read_csv".
 
 For your convenience, it looks like:
 
 ```{r read_csv, message=FALSE, eval=FALSE}
-library(readr)
 narrabay_data <- read_csv("narrabay_buoy_1517.csv")
 ```
 ```{r read_csv_2, message=FALSE, echo=FALSE}
@@ -140,7 +140,8 @@ narrabay_data_qa1 <- narrabay_data_qa1 %>%
 ```
 
 ## Exercise 3.2
-Now that we have replaced the -7999 with `NA` for `Chl` and `Temp`. We need to do the same for pH.
+
+1. Now that we have replaced the -7999 with `NA` for `Chl` and `Temp`. We need to do the same for pH.
 
 Let's take a look at the summary again to see if everything looks good.
 
@@ -170,11 +171,12 @@ summary(narrabay_data_qa2)
 ```
 
 ## Exercise 3.3 
-Let's add one more `filter()` to take care of the Temperatures.  Just to be safe, we can filter our temperatures greater than 40.
+
+1. Let's add one more `filter()` to take care of the Temperatures.  Just to be safe, we can filter our temperatures greater than 40.
 
 This should take are of our QA needs.  We do however have one issue that is making our data un-tidy.  Can anyone spot it?
 
-Let's take care of that multiple data in a single column then!  Also, while we are at it we can turn the data time string into a date format that will work better for looking at time series kind of things.   This one is a bit tricky so we will do it together
+Let's take care of that multiple data in a single column then!  Also, while we are at it we can turn the data time string into a date format that will work better for looking at time series kind of things.   This one is a bit tricky so we will do it together and will also select out, with `select()` our final set of columns.
 
 ```{r tidy_it}
 library(stringr)
