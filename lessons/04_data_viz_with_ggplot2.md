@@ -180,7 +180,7 @@ In short, some of the initial setup for ggplot is a bit more verbose than base R
 Before we get into another exercise, lets look at some of the other geometries.  In particular, boxplots and histograms.  If you want to see all that you can do, take a look at the list of `ggplot2` [geom functions](http://docs.ggplot2.org/current/).
 
 ## Example explained
-Now that we have the basics of `ggplot2` down, let's take a closer look at our example in `narrabay_analysis.R`.  As we review this we will cover the fact that plotting is 90% data prep, 9% tweaking colors, and 1% actual plotting code.  We will see examples of the functions we talked about above, and use a cool trick to turn out nice `ggplot2` plot into an interactive plot!  
+Now that we have the basics of `ggplot2` down, let's take a closer look at our examples in `narrabay_analysis.R`.  As we review this we will cover the fact that plotting is 90% data prep, 9% tweaking, and 1% actual plotting code.  We will see examples of the functions we talked about above, and use a cool trick to turn our nice `ggplot2` plot into an interactive plot!  
 
 ## Excercise 4.1
 For this exercise we will edit our code to produce the same plot that we have for the time series, but we now want the color of the dots to be represent the location.  Work together with the person next to you on this for about 15 minutes.  We will then finish it up together.

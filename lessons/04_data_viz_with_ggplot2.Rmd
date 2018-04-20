@@ -14,20 +14,6 @@ library("dplyr")
 library("googlesheets")
 library("tidyr")
 
-#gap_gdp <- read_csv("gapminder_gdp.csv")
-#gap_co2_url <- "https://docs.google.com/spreadsheets/d/1qJR55SL3lHcx1d3hMHJ1dMYqAog9sXofaPWjPkpO4QQ/pub"
-#gap_co2 <- gs_read(gs_url(gap_co2_url))
-#gap_gdp_tidy <- gap_gdp %>%
-#  gather("year","gdp",-1) %>%
-#  select(country = `GDP (constant 2000 US$)`, everything())
-
-#gap_co2_tidy <- gap_co2 %>%
-#  gather("year","co2_emiss", -1) %>%
-#  select(country = `CO2 emission total`, everything())
-
-#gap_data <- gap_gdp_tidy %>%
-#  left_join(gap_co2_tidy, by = c("country", "year")) %>%
-#  filter(complete.cases(gdp,co2_emiss))
 ```
 
 
@@ -184,7 +170,7 @@ In short, some of the initial setup for ggplot is a bit more verbose than base R
 Before we get into another exercise, lets look at some of the other geometries.  In particular, boxplots and histograms.  If you want to see all that you can do, take a look at the list of `ggplot2` [geom functions](http://docs.ggplot2.org/current/).
 
 ## Example explained
-Now that we have the basics of `ggplot2` down, let's take a closer look at our example in `narrabay_analysis.R`.  As we review this we will cover the fact that plotting is 90% data prep, 9% tweaking colors, and 1% actual plotting code.  We will see examples of the functions we talked about above, and use a cool trick to turn out nice `ggplot2` plot into an interactive plot!  
+Now that we have the basics of `ggplot2` down, let's take a closer look at our examples in `narrabay_analysis.R`.  As we review this we will cover the fact that plotting is 90% data prep, 9% tweaking, and 1% actual plotting code.  We will see examples of the functions we talked about above, and use a cool trick to turn our nice `ggplot2` plot into an interactive plot!  
 
 ## Excercise 4.1
 For this exercise we will edit our code to produce the same plot that we have for the time series, but we now want the color of the dots to be represent the location.  Work together with the person next to you on this for about 15 minutes.  We will then finish it up together.
