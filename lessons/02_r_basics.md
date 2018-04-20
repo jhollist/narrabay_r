@@ -2,7 +2,7 @@
 
 # R Basics
 
-In this lesson we are going to go over the very basics of R, cover some basic terminology, talk a little about syntax and point you to resources for getting help.
+In this lesson we are going to go over the very basics of R, cover some basic terminology, talk a little about syntax and point you to resources for getting help.  
 
 ## Lesson Outline:
 
@@ -19,7 +19,7 @@ In this lesson we are going to go over the very basics of R, cover some basic te
 
 R is a functional programming language and as such, most everything you do uses a function.
 
-The basic syntax of function follows the form: `function_name(arg1, arg2, ...)`.  With the base install, you will gain access to many (3011 functions, to be exact).  Some examples:
+The basic syntax of function follows the form: `function_name(arg1, arg2, ...)`.  With the base install, you will gain access to many (3336 functions, to be exact).  Some examples:
 
 
 ```r
@@ -46,21 +46,21 @@ rnorm(100,mean=10,sd=2)
 ```
 
 ```
-##   [1] 12.127638 12.177538 12.679371 11.572314  9.983219 10.639572 12.189423
-##   [8]  9.186717 10.913731 10.801671 12.990144  9.091207 15.363323 10.152471
-##  [15]  8.553171  4.949820 10.586966  8.904035 14.800651  9.658659 12.003284
-##  [22] 11.004449  6.709088  9.657855 13.293486  8.028517 11.051781 12.176128
-##  [29] 12.857381 12.996715 14.078194  9.013033 11.610529  9.256833  8.680884
-##  [36]  9.235067 13.415824 10.070756  8.116071 10.917465  9.415027 11.693892
-##  [43]  9.737885 13.152864  7.291532 10.152172 12.131960  9.907044  6.563959
-##  [50] 12.121976 12.442582  9.049659 11.435532  7.487309 11.110348 11.738899
-##  [57]  9.520516  9.781367 12.579131  9.281988 14.841182  9.072201  9.912728
-##  [64] 13.004797 10.914650  7.033384  9.484845  8.193495 10.649312  8.146949
-##  [71] 11.137819 10.630792  8.309224 10.725649  8.264861 10.637346  6.517480
-##  [78]  8.797483 12.102816  7.663210  7.442749  9.400063  8.991156 10.332045
-##  [85] 16.272095  9.280877 11.336243 13.893183  9.048148 10.786377  9.962864
-##  [92]  8.652303  9.616760 12.087304  8.810883 10.716345 11.136384 15.010060
-##  [99]  6.958564 10.051060
+##   [1]  6.870739 12.059534 11.583888 10.748479  8.822142  8.717001 12.456604
+##   [8]  7.902453  9.560976  8.593972  9.733030 11.498864  9.274852  7.534569
+##  [15] 10.518602 12.798441 10.594274 12.414982 12.521281  9.176658  7.040496
+##  [22]  9.919719  8.737757 10.800980 13.312422  7.396675 10.606650 11.104054
+##  [29]  8.687277 12.575893 13.478224 12.510316 12.849626  7.385470 12.134717
+##  [36] 12.732080 10.792082 11.918232 10.392583 11.305967 12.893760  8.565464
+##  [43]  9.582611 12.643734 10.575225 11.480088 10.562749  8.354172 10.641352
+##  [50]  9.552071  5.704018 11.590709 10.034401 10.590495  5.048451 12.222383
+##  [57] 13.165198  9.233295 12.449152 10.458688 10.199434  6.558700  7.594914
+##  [64]  9.328531  9.058455  9.762514  9.653578  8.073161 13.688464 10.339141
+##  [71] 12.817647  8.187647 11.855622 12.152216  7.575821 14.165023 11.754345
+##  [78]  8.857238 11.893420  9.144589  7.906916  8.177872  9.118552 13.817831
+##  [85] 10.096608 10.993504  8.747702 10.301464  8.990258  9.758774  8.155885
+##  [92] 11.524879  8.375423 11.567774  9.635877  9.499776  9.555446  5.035507
+##  [99]  8.528478  8.600189
 ```
 
 ```r
@@ -69,7 +69,7 @@ mean(rnorm(100))
 ```
 
 ```
-## [1] -0.1932236
+## [1] 0.1074563
 ```
 
 ```r
@@ -78,7 +78,7 @@ sum(rnorm(100))
 ```
 
 ```
-## [1] 6.525684
+## [1] -1.849024
 ```
 
 ### A few side notes 
@@ -102,7 +102,7 @@ The base install of R is quite powerful, but you will soon have a need or desire
 
 ### CRAN
 
-One of the reasons for R's popularity is CRAN, [The Comprehensive R Archive Network](http://cran.r-project.org/).  This is where you download R and also where most will gain access to packages (there are other places, but that is for later).  Not much else to say about this now other than to be aware of it.  As of 2018-03-07, there are 12212 on CRAN! 
+One of the reasons for R's popularity is CRAN, [The Comprehensive R Archive Network](http://cran.r-project.org/).  This is where you download R and also where most will gain access to packages (there are other places, but that is for later).  Not much else to say about this now other than to be aware of it.  As of 2018-04-20, there are 12495 on CRAN! 
 
 ### Installing packages
 
@@ -356,6 +356,8 @@ help(package="dplyr") #Help on the package `dplyr`
 apropos("print") #Returns all available functions with "print" in the name
 ??print #Shortcut, but also searches demos and vignettes in a formatted page
 ```
+
+A newer resource that I found to be quite well done is this [Appendix](http://socviz.co/appendix.html#how-to-read-an-r-help-page) from a new book by Kieran Healy on Data Visualization.  It gives you a basic outline of what the standard R Help pages look like and how to interpret them.  Highly recommend this!
 
 ### Official R Resources
 In addition to help from within R itself, CRAN and the R-Project have many resources available for support.  Two of the most notable are the mailing lists and the [task views](http://cran.r-project.org/web/views/).

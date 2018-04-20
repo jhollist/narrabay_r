@@ -2,43 +2,37 @@
 
 # The Punch Line First
 
-For this workshop we are starting at the end and working backwards.  As such this first lesson is going to be in a follow the leader mode.  This is a useful way to teach this as we get to see what is possible early on and then we can focus on the details of how we get there and you will have a working example of a markdown document, on github, that includes a full data analysis.  Let's get started:
+For this workshop we are starting at the end and working backwards.  As such this first lesson is going to be in a follow the leader mode.  This is a useful way to teach this as we get to see what is possible early on and then we can focus on the details of how we get there.  Also, you will have a working example of an R script that includes a full data analysis.  Let's get started:
 
-## Fork my repository
+## Create a new project in RStudio
 
-I have a repository on GitHub that contains our example R Markdown (and `.Rmd`) file.  You will need to fork this repository to your own GitHub account.  This means you are copying my repository to a repository of your own.  Head over the <https://github.com/jhollist/yale_markdown>, click "Fork this Repository".  It looks like:
+We need to create a new project.  In RStudio you need to find the New Project menu.
 
-![gh_fork](figures/gh_fork.png)
+![rstudio_proj1](figures/rstudio_proj.jpg)
 
-## Create a new project in RStudio from your Github Repository
-
-With this repository forked you can now use the RStudio New Project dialog to create a project from this GitHub repository.  In RStudio you need to find the New Project menu.
+Then select "New Directory"
 
 ![rstudio_proj1](figures/rstudio_proj1.png)
 
-Then select "Version Control"
+The select "New Project"
 
-![rstudio_proj1](figures/rstudio_proj2.png)
+![rstudio_proj_type](figures/rstudio_proj_type.png)
 
-Then select "Git"
+Then name your project, "narrabay_r_workshop"
 
-![rstudio_proj1](figures/rstudio_proj3.png)
-
-
-Then put in the URL of your forked repo, which will be something along the lines of "https://github.com/your_username/yale_markdown".
-
-![rstudio_proj1](figures/rstudio_proj4.png)
+![rstudio_proj_name](figures/rstudio_proj_name.png)
 
 ## Open up the R Markdown Document
 
-With your forked version of the repo cloned locally as an RStudio project, we have all we need (if I have set this up correctly...) to render our R Markdown document.  First, open up the R Markdown document (`yale_markdown.Rmd`) which should look something like this when open:
+We need to download a copy of the script so that we can work with it.  Right click on this link ([narrabay_analysis.R](https://raw.githubusercontent.com/jhollist/narrabay_r/master/narrabay_analysis.R)) and select "save as" and browse to the RStudio Project (remember it is just a folder on your file system!).  
 
-![rstudio_rmd](figures/rstudio_rmd.png)
+Once this is downloaded, in RStudio choose File:Open File (or ctrl-o for you keyboard folks).  Your screen should now look something like:
 
-## Generate the html from your document
+![rstudio_script](figures/rstudio_script.png)
 
-And now we can generate our output html by clicking on the "knit" button
+## Now run it!
 
-![rstudio_knit](figures/rstudio_knit.png)
+We can now run the whole thing with the push of a button.  Find the "Source" button, stand back, and press it!
 
-And lastly, try it again, but this time with a different set of years.
+![rstudio_source](figures/rstudio_source.png)
+
