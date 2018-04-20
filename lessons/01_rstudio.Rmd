@@ -58,7 +58,7 @@ Once you have text and code in your R script, the code still needs to be sent to
 
 ## Exercise 1.1
 
-Now that we have RStudio opened and know are way around a bit, we are going to jump straight to the end and see what a finished (sorta) R script looks like.  We will run the whol thing and be amazed!  In this case we are starting with the punchline first!
+Now that we have RStudio opened and know are way around a bit, we are going to jump straight to the end and see what a finished (sorta) R script looks like.  We will run the whole thing and be amazed!  In this case we are starting with the punchline first!
 
 1. Follow this link to [the Punch Line](punchline.md) and we will work through that together to get more familar with R, R Studio, R script.
 

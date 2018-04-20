@@ -49,3 +49,18 @@ We can now run the whole thing with the push of a button.  Find the "Source" but
 
 ![rstudio_source](figures/rstudio_source.png)
 
+## Look at the plots
+
+Now in the console type:
+
+```{r, eval=FALSE}
+time_series_gg
+```
+
+Look at that!
+
+And for even more, "WOW!"
+
+```{r, eval=FALSE}
+ggplotly(chla_temp_gg)
+```

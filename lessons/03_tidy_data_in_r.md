@@ -21,7 +21,7 @@ Simply put, a data structure is a way for programming languages to handle storin
 
 ## Reading in data
 
-The best way to learn what a data frame is is to look at one.  We can build one from scratch with the `data.frame()` function and while completely creating a data frame from scratch is useful (especially when you start writing your own functions), more often than not data is stored in an external file that you need to read into R.  These may be delimited text files, spreadsheets, relational databases, SAS files ...  You get the idea.  Instead of treating this subject exhaustively, we will focus just on a single file type, `.csv` that is very commonly encountered and (usually) easy to create from other file types.  For this, we will use the Tidyverse way to do this and use  `read_csv()` from the `readr` pacakge.
+The best way to learn what a data frame is is to look at one.  We can build one from scratch with the `data.frame()` function and while completely creating a data frame from scratch is useful (especially when you start writing your own functions), more often than not data is stored in an external file that you need to read into R.  These may be delimited text files, spreadsheets, relational databases, SAS files ...  You get the idea.  Instead of treating this subject exhaustively, we will focus just on a single file type, `.csv`, that is very commonly encountered and (usually) easy to create from other file types.  For this, we will use the Tidyverse way to do this and use  `read_csv()` from the `readr` pacakge.
 
 The `read_csv()` is a re-imagined version of the base R fucntion, `read.csv()`.  This command assumes a header row with column names and that the delimiter is a comma. The expected no data value is NA and by default, strings are NOT converted to factors.  This is a big benefit to using `read_csv()` as opposed to `read.csv()`.  Additionally, `read_csv()` has some performance enhancements that make it preferrable when working with larger data sets.  In my limited experience it is about 45% faster than the base R options.  For instance a ~200 MB file with hundreds of columns and a couple hundred thousand rows took ~14 seconds to read in with `read_csv()` and about 24 seconds with `read.csv()`.  As a comparison at 45 seconds Excel had only opened 25% of the file!
 
@@ -47,18 +47,18 @@ narrabay_data
 
 ```
 ## # A tibble: 236,096 x 5
-##    Location               Time                      Chl     pH   Temp
-##    <chr>                  <chr>                   <dbl>  <dbl>  <dbl>
-##  1 Phillipsdale (bottom)  12/31/2017 11:45:00 PM    NA  -7999. -7999.
-##  2 Phillipsdale (surface) 12/31/2017 11:45:00 PM -7999. -7999. -7999.
-##  3 Phillipsdale (bottom)  12/31/2017 11:30:00 PM    NA  -7999. -7999.
-##  4 Phillipsdale (surface) 12/31/2017 11:30:00 PM -7999. -7999. -7999.
-##  5 Phillipsdale (bottom)  12/31/2017 11:15:00 PM    NA  -7999. -7999.
-##  6 Phillipsdale (surface) 12/31/2017 11:15:00 PM -7999. -7999. -7999.
-##  7 Phillipsdale (bottom)  12/31/2017 11:00:00 PM    NA  -7999. -7999.
-##  8 Phillipsdale (surface) 12/31/2017 11:00:00 PM -7999. -7999. -7999.
-##  9 Phillipsdale (bottom)  12/31/2017 10:45:00 PM    NA  -7999. -7999.
-## 10 Phillipsdale (surface) 12/31/2017 10:45:00 PM -7999. -7999. -7999.
+##    Location               Time                     Chl    pH  Temp
+##    <chr>                  <chr>                  <dbl> <dbl> <dbl>
+##  1 Phillipsdale (bottom)  12/31/2017 11:45:00 PM    NA -7999 -7999
+##  2 Phillipsdale (surface) 12/31/2017 11:45:00 PM -7999 -7999 -7999
+##  3 Phillipsdale (bottom)  12/31/2017 11:30:00 PM    NA -7999 -7999
+##  4 Phillipsdale (surface) 12/31/2017 11:30:00 PM -7999 -7999 -7999
+##  5 Phillipsdale (bottom)  12/31/2017 11:15:00 PM    NA -7999 -7999
+##  6 Phillipsdale (surface) 12/31/2017 11:15:00 PM -7999 -7999 -7999
+##  7 Phillipsdale (bottom)  12/31/2017 11:00:00 PM    NA -7999 -7999
+##  8 Phillipsdale (surface) 12/31/2017 11:00:00 PM -7999 -7999 -7999
+##  9 Phillipsdale (bottom)  12/31/2017 10:45:00 PM    NA -7999 -7999
+## 10 Phillipsdale (surface) 12/31/2017 10:45:00 PM -7999 -7999 -7999
 ## # ... with 236,086 more rows
 ```
 
@@ -91,9 +91,9 @@ narrabay_data[2,]
 
 ```
 ## # A tibble: 1 x 5
-##   Location               Time                      Chl     pH   Temp
-##   <chr>                  <chr>                   <dbl>  <dbl>  <dbl>
-## 1 Phillipsdale (surface) 12/31/2017 11:45:00 PM -7999. -7999. -7999.
+##   Location               Time                     Chl    pH  Temp
+##   <chr>                  <chr>                  <dbl> <dbl> <dbl>
+## 1 Phillipsdale (surface) 12/31/2017 11:45:00 PM -7999 -7999 -7999
 ```
 
 At this point, we have:

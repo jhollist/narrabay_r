@@ -100,6 +100,7 @@ chla_temp_gg <- narrabay_tidy %>%
   geom_smooth(method = "lm", color = "black") +
   facet_grid(location ~ .) +
   theme_bw() +
+  theme(legend.position = "none") +
   scale_color_manual(values = c("darkblue", "darkred"))
 chla_temp_gg
 
